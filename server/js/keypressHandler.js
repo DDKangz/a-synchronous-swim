@@ -1,5 +1,6 @@
 const _ = require('underscore');
 const keypress = require('keypress');
+const messagequeue = require('./messageQueue');
 
 ///////////////////////////////////////////////////////////////////////////////
 // Utility Function ///////////////////////////////////////////////////////////
@@ -9,6 +10,7 @@ const validMessages = ['left', 'right', 'up', 'down'];
 const mappedChars = { space: ' ' }; // special mappings
 
 const isValidMessage = (message) => {
+  console.log('is valid')
   return _.contains(validMessages, message);
 };
 
@@ -40,7 +42,7 @@ module.exports.initialize = (callback) => {
       callback(key.name);
       return; // don't do any more processing on this key
     }
-    
+
     // otherwise build up a message from individual characters
     if (key && (key.name === 'return' || key.name === 'enter')) {
       // on enter, process the message

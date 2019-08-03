@@ -25,7 +25,7 @@ describe('server responses', () => {
     let {req, res} = server.mock('/', 'GET');
 
     httpHandler.router(req, res);
-    expect(res._data.toString()).to.any('up','down','left','right')
+    expect(['up','down','left','right', '']).to.include(res._data.toString())
     expect(res._responseCode).to.equal(200);
     expect(res._ended).to.equal(true);
     done();
