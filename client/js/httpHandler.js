@@ -1,20 +1,22 @@
-(function() {
-
+// (function() {
+  // import SwimTeam from './swimTeam.js'
   const serverUrl = 'http://127.0.0.1:3000';
 
-  // const ajaxGetRequest = () => {
-  //   $.ajax({
-  //     type: 'GET',
-  //     url: serverUrl,
-  //     cache: false,
-  //     contentType: false,
-  //     processData: false,
-  //     success: () => {
-  //       // reload the page
-  //       window.location = window.location.href;
-  //     }
-  //   });
-  // };
+  const ajaxGetRequest = () => {
+    $.ajax({
+      type: 'GET',
+      url: serverUrl,
+      cache: false,
+      contentType: false,
+      processData: false,
+      success: (data) => {
+        SwimTeam.move(data);
+        // window.location = window.location.href;
+      }
+    });
+  };
+
+  // setInterval(ajaxGetRequest, 1250);
   /////////////////////////////////////////////////////////////////////
   // The ajax file uplaoder is provided for your convenience!
   // Note: remember to fix the URL below.
@@ -55,4 +57,4 @@
     ajaxFileUplaod(file);
   });
 
-})();
+// })();

@@ -20,8 +20,10 @@ h3 {
   left: 100px;
 }
 .swimmer {
-  width: 75px;
-  height: 75px;
+  /* background: url(./giphy.gif); */
+  font-size: 22px;
+  width: 100px;
+  height: 100px;
   padding: 28px;
   padding-top: 0;
   text-align: center;
