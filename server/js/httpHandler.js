@@ -12,9 +12,16 @@ module.exports.initialize = (queue) => {
   messageQueue = queue;
 };
 
+randomCommand = () => {
+  var commands = ['up', 'left', 'down', 'right'];
+  return commands[Math.floor(Math.random() * Math.floor(4))]
+}
+
 module.exports.router = (req, res, next = ()=>{}) => {
   console.log('Serving request type ' + req.method + ' for url ' + req.url);
   res.writeHead(200, headers);
-  res.end();
+  res.end(randomCommand());
   next(); // invoke next() at the end of a request to help with testing!
 };
+
+
